@@ -1,0 +1,125 @@
+*{
+padding:0;
+margin:0;
+text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+}
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.logo{
+    color: aliceblue;
+    font-size: 35px;
+     line-height: 10vh; 
+    padding: 0 100px; 
+    font-weight: bold;
+    text-align: center;
+    }
+  nav{
+    height: 10vh;
+    background: #5b78c7;
+     display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    text-align: center;  
+    
+  }
+  .nav-links{
+    width: 50%;
+     height: 100%;
+     background: #5b78c7;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     margin-left: auto;
+     list-style: none;
+   }
+  .nav-links li{
+    padding: 1rem;
+    margin: auto;
+  }
+  .nav-links li a{
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  .nav-links li a.active, .nav-links li a:hover{
+    background: gainsboro;
+    transition: 0.5s;
+    color: #000;
+}
+  #bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: chartreuse;
+    clip-path: polygon(0 0, 100% 0%, 100% 83%, 0 90%);
+     }
+  .sideButton{
+    font-size: 40px;
+    visibility: hidden;
+  }
+
+  @media screen and (max-width:990px)
+  {
+    .nav-links li{
+      padding: 0.5rem;
+    }
+    .nav-links li a{
+      font-size: 18px;
+    }
+   
+  }
+  @media screen and (max-width:880px){
+    nav{
+      position: relative;
+      display: grid;
+    }
+    .sideButton{
+      visibility: visible;
+      position: absolute;
+      right: 4%;
+      top:50%;
+      cursor: pointer;
+      transform: translate(-4%,-50%);/*To keep it to center*/
+      z-index: 2;
+      padding: 1rem;
+    }
+    .sideButton:hover{
+      background: rgb(188, 224, 188)
+    }
+    .nav-links{
+      position: fixed; 
+      width: 100%;
+      height: 100vh;
+      background: #5b78c7;
+      flex-direction: column;
+       clip-path: circle(100px at 90% -20%);
+      -webkit-clip-path:circle(100px at 90% -20%); 
+      transition: all 0.5s ease-out; 
+      z-index: 1;
+    }
+    .nav-links.open{
+       clip-path: circle(1150px at 90% -10%);
+      -webkit-clip-path:circle(1150px at 90% -10%);  
+   
+    }
+    .nav-links li{
+      opacity: 0;
+    } 
+    .nav-links li a{
+      font-size: 25px;
+      }
+    
+    li.fade{
+      opacity: 1;
+    }
+    
+  }
